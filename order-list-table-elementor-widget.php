@@ -20,7 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* adds stylesheet file to the end of the queue */
 function oltew_order_list_table_enq_style(){
     $dir = plugin_dir_url(__FILE__);
-    wp_enqueue_style('order-list-table', $dir . '/css/custom-style.css', array(), '1.0.2', 'all');
+    wp_enqueue_style('order-list-table', $dir . '/css/custom-style.css', array(), '1.0', 'all');
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+        array(),
+        '5.15.4'
+    );
 }
 add_action('wp_enqueue_scripts', 'oltew_order_list_table_enq_style');
 
