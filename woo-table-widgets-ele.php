@@ -595,7 +595,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 				'label' => esc_html__('Table Header Icon Color', 'oltew-order-list-table-ele'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .oltew-order-list-table th i' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .oltew-order-list-table th svg' => 'color: {{VALUE}}'
 				]
 			]
 		);
@@ -648,7 +648,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 				'label' => esc_html__('Table Body Icon Color', 'oltew-order-list-table-ele'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .oltew-order-list-table table td i' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .oltew-order-list-table table td svg' => 'color: {{VALUE}}'
 				]
 			]
 		);
