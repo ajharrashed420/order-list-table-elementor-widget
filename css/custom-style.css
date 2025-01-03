@@ -1,0 +1,70 @@
+/* Recent Orders Homepage Table*/
+.oltew-order-list-table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    white-space: nowrap;
+ }
+
+  .oltew-order-list-table table, .oltew-order-list-table table th, .oltew-order-list-table table td {
+      border: 1px solid #eaeaea;
+  }
+
+ .oltew-order-list-table .heading_content, .oltew-order-list-table .body_content, .oltew-order-list-table .product_list_content {
+     display: inline-flex;
+     gap: 3px;
+ }
+
+.oltew-order-list-table table thead th, .oltew-order-list-table tbody td{
+    vertical-align: middle;
+}
+
+.order_list_icon, .status_icon, .buy_now_icon {	
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    width: 18px;
+    height: auto;
+}
+
+
+td.order_count {
+    text-align: center;
+}
+
+/*Buy Now Button Style*/
+.oltew-order-list-table table .buy_now a {
+    background:#FBCD01;
+    color: #2b2b2b;
+    display: inline-block;
+
+}
+
+
+.status_odd{
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px 5px;
+  color: #fff;
+  border-radius: 5px;
+}
+.st_completed {
+    background: #0fe401;
+}
+
+.st_processing{
+    background: #00a9ff;
+}
+.st_on-hold{
+    background: #ffa100;
+}
+
+.st_cancelled{
+    background: #ff0000;
+}
+
+.st_faild{
+    background: #ff0000;
+}
+
+
