@@ -33,11 +33,15 @@ td.order_count {
 }
 
 /*Buy Now Button Style*/
+td.buy_now {
+    display: flex;
+    gap: 5px;
+}
 .oltew-order-list-table table .buy_now a {
     background:#FBCD01;
     color: #2b2b2b;
     display: inline-block;
-
+    text-align: center;
 }
 
 

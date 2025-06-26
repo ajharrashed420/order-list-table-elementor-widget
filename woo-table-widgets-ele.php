@@ -1361,6 +1361,16 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'buy_now_background_hover_color',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .oltew-order-list-table table .buy_now a:hover',
+				
+			]
+		);
+
 		$this->end_controls_tab();
 
 
@@ -1763,6 +1773,12 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 							position: absolute;
 							top: -9999px;
 							left: -9999px;
+						}
+
+						td.buy_now {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
 						}
 
 						.oltew-order-list-table table tr {
