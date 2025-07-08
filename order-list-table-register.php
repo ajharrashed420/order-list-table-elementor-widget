@@ -29,7 +29,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 	 */
 	public function get_title()
 	{
-		return esc_html__('Order List Table', 'oltew-order-list-table-ele');
+		return esc_html__('Order List Table', 'order-list-table-elementor-widget');
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__('Table Settings', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Settings', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -115,16 +115,16 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'select_status',
 			[
-				'label' => esc_html__('Select Status', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Select Status', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple' => true,
 				'options' => [
-					'wc-completed' => esc_html__('Completed', 'oltew-order-list-table-ele'),
-					'wc-processing' => esc_html__('Processing', 'oltew-order-list-table-ele'),
-					'wc-on-hold' => esc_html__('On hold', 'oltew-order-list-table-ele'),
-					'wc-failed' => esc_html__('Failed', 'oltew-order-list-table-ele'),
-					'wc-cancelled' => esc_html__('Cancelled', 'oltew-order-list-table-ele'),
+					'wc-completed' => esc_html__('Completed', 'order-list-table-elementor-widget'),
+					'wc-processing' => esc_html__('Processing', 'order-list-table-elementor-widget'),
+					'wc-on-hold' => esc_html__('On hold', 'order-list-table-elementor-widget'),
+					'wc-failed' => esc_html__('Failed', 'order-list-table-elementor-widget'),
+					'wc-cancelled' => esc_html__('Cancelled', 'order-list-table-elementor-widget'),
 
 				],
 				'default' => ['wc-completed', 'wc-processing', 'wc-on-hold', 'wc-failed', 'wc-cancelled'],
@@ -134,7 +134,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'list_per_page',
 			[
-				'label' => esc_html__('List Per Page', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('List Per Page', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => '10',
 			]
@@ -146,10 +146,10 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			'order_time_format',
 			[
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'label' => esc_html__('Select Order Time Format', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Select Order Time Format', 'order-list-table-elementor-widget'),
 				'options' => [
-					'ago' => esc_html__('Ago', 'oltew-order-list-table-ele'),
-					'date' => esc_html__('Date/Month/YR TIME', 'oltew-order-list-table-ele'),
+					'ago' => esc_html__('Ago', 'order-list-table-elementor-widget'),
+					'date' => esc_html__('Date/Month/YR TIME', 'order-list-table-elementor-widget'),
 				],
 				'default' => 'ago',
 			]
@@ -159,10 +159,10 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			'order_by',
 			[
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'label' => esc_html__('Order', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Order', 'order-list-table-elementor-widget'),
 				'options' => [
-					'asc' => esc_html__('ASC', 'oltew-order-list-table-ele'),
-					'desc' => esc_html__('DESC', 'oltew-order-list-table-ele'),
+					'asc' => esc_html__('ASC', 'order-list-table-elementor-widget'),
+					'desc' => esc_html__('DESC', 'order-list-table-elementor-widget'),
 				],
 				'default' => 'desc',
 			]
@@ -172,8 +172,8 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'order_list_mobile_style',
 			[
-				'label' => esc_html__('Responsive for Mobile View', 'oltew-order-list-table-ele'),
-				'description' => esc_html__('Enable/Disable Responsive Mobile View Table Style. Default full width table like dasktop mode', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Responsive for Mobile View', 'order-list-table-elementor-widget'),
+				'description' => esc_html__('Enable/Disable Responsive Mobile View Table Style. Default full width table like dasktop mode', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -188,7 +188,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'table_header',
 			[
-				'label' => esc_html__('Table Header Title and Icons', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Header Title and Icons', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -197,7 +197,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_name_heading',
 			[
-				'label' => esc_html__('Customer Name and Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Name and Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -205,7 +205,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_name',
 			[
-				'label' => esc_html__('Customer Name', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Name', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Customer',
 			]
@@ -214,7 +214,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_th_icon',
 			[
-				'label' => esc_html__('Customer Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-users',
@@ -227,7 +227,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_time_heading',
 			[
-				'label' => esc_html__('Sell Time and Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Time and Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -236,7 +236,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_time',
 			[
-				'label' => esc_html__('Sell Time', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Time', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Sell Time',
 			]
@@ -245,7 +245,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_time_th_icon',
 			[
-				'label' => esc_html__('Sell Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-history',
@@ -258,7 +258,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'order_status_heading',
 			[
-				'label' => esc_html__('Order Status and Icons', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Order Status and Icons', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -266,7 +266,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'order_status',
 			[
-				'label' => esc_html__('Order Status', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Order Status', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Status',
 			]
@@ -275,7 +275,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'order_status_th_icon',
 			[
-				'label' => esc_html__('Order Status Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Order Status Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-fire',
@@ -289,7 +289,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_phone_heading',
 			[
-				'label' => esc_html__('Customer Phone', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Phone', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -297,7 +297,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_phone',
 			[
-				'label' => esc_html__('Phone', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Phone', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Phone',
 			]
@@ -306,7 +306,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_phone_th_icon',
 			[
-				'label' => esc_html__('Customer Phone Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Phone Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-phone',
@@ -319,7 +319,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_amount_heading',
 			[
-				'label' => esc_html__('Sell Amount and Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Amount and Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -327,7 +327,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_amount',
 			[
-				'label' => esc_html__('Sell Amount', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Amount', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Amount',
 			]
@@ -336,7 +336,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_amount_th_icon',
 			[
-				'label' => esc_html__('Amount Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Amount Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-dollar',
@@ -355,7 +355,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'data_icons',
 			[
-				'label' => esc_html__('Data List Text & Icons', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Data List Text & Icons', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -364,7 +364,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_list_icon',
 			[
-				'label' => esc_html__('Customer Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Customer Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-user',
@@ -377,7 +377,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'sell_list_time_icon',
 			[
-				'label' => esc_html__('Sell Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Sell Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-clock-o',
@@ -391,7 +391,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'customer_phone_list_icon',
 			[
-				'label' => esc_html__('Phone Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Phone Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-phone',
@@ -408,7 +408,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'order_status_icon_heading',
 			[
-				'label' => esc_html__( 'Order Status Icons', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Order Status Icons', 'order-list-table-elementor-widget' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -419,7 +419,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'set_status_completed_icon',
 			[
-				'label' => esc_html__('Status Completed Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Completed Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-check-circle',
@@ -433,7 +433,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'set_status_processing_icon',
 			[
-				'label' => esc_html__('Status Processing Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Processing Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-hourglass',
@@ -447,7 +447,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'set_status_onhold_icon',
 			[
-				'label' => esc_html__('Status On hold Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status On hold Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-pause',
@@ -461,7 +461,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'set_status_faild_icon',
 			[
-				'label' => esc_html__('Status Fail or Canelled Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Fail or Canelled Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-times',
@@ -481,7 +481,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'product_section',
 			[
-				'label' => esc_html__('Product Section', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product Section', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -489,7 +489,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_product_name',
 			[
-				'label' => esc_html__('Hide/Show', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide/Show', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -500,7 +500,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_heading',
 			[
-				'label' => esc_html__('Product Heading', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product Heading', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -511,7 +511,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_name',
 			[
-				'label' => esc_html__('Products', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Products', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Products',
 			]
@@ -523,7 +523,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_name_th_icon',
 			[
-				'label' => esc_html__('Product Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-shopping-cart',
@@ -538,7 +538,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_body_section',
 			[
-				'label' => esc_html__('Product List Section', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product List Section', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -548,7 +548,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_link_words',
 			[
-				'label' => esc_html__('Link Word Limit', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Link Word Limit', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 5,
 			]
@@ -557,7 +557,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_list_icon',
 			[
-				'label' => esc_html__('Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-shopping-bag',
@@ -580,7 +580,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'buy_now_button_section',
 			[
-				'label' => esc_html__('Buy Now Button', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Buy Now Button', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -588,7 +588,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_buy_now',
 			[
-				'label' => esc_html__('Hide/Show', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide/Show', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -599,7 +599,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_heading',
 			[
-				'label' => esc_html__('Buy Now Table Heading', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Buy Now Table Heading', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -607,7 +607,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now',
 			[
-				'label' => esc_html__('Text', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Text', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Action',
 			]
@@ -616,7 +616,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_th_icon',
 			[
-				'label' => esc_html__('Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fa fa-cart-plus',
@@ -631,7 +631,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_button_heading',
 			[
-				'label' => esc_html__('Buy Now List', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Buy Now List', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -641,7 +641,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_button_text',
 			[
-				'label' => esc_html__('Text', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Text', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'Buy Now',
 			]
@@ -652,7 +652,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_list_icon',
 			[
-				'label' => esc_html__('Icon', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
@@ -660,7 +660,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_list_icon_size',
 			[
-				'label' => esc_html__( 'Size', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Size', 'order-list-table-elementor-widget' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -695,7 +695,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'table_column_hide_show',
 			[
-				'label' => esc_html__('Table Item Hide/Show', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Item Hide/Show', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -703,7 +703,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_order_sl',
 			[
-				'label' => esc_html__('Hide Order SL', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Order SL', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'yes'
 			]
@@ -711,7 +711,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_customer_title',
 			[
-				'label' => esc_html__('Hide Customer Column', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Customer Column', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -720,7 +720,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_sell_time',
 			[
-				'label' => esc_html__('Hide Sell Time', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Sell Time', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -729,7 +729,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_status',
 			[
-				'label' => esc_html__('Hide Order Status', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Order Status', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -740,7 +740,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_customer_phone',
 			[
-				'label' => esc_html__('Hide Customer Phone', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Customer Phone', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'yes'
 			]
@@ -749,7 +749,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'hide_sell_amount',
 			[
-				'label' => esc_html__('Hide Sell Amount', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Hide Sell Amount', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
@@ -762,7 +762,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'oltew_table_alignment_settings',
 			[
-				'label' => esc_html__('Table Alignment', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Alignment', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -771,18 +771,18 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			'oltew_table_th_alignment',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__( 'Table Header Title', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Table Header Title', 'order-list-table-elementor-widget' ),
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Left', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Center', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Right', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -794,18 +794,18 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			'oltew_table_td_alignment',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__( 'Table Body Text', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Table Body Text', 'order-list-table-elementor-widget' ),
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Left', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Center', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'oltew-order-list-table-ele' ),
+						'title' => esc_html__( 'Right', 'order-list-table-elementor-widget' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -822,7 +822,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'table_style',
 			[
-				'label' => esc_html__('Table Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Style', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -831,7 +831,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_order_heading',
 			[
-				'label' => esc_html__('Table Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -849,7 +849,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'woltw_table_padding',
 			[
-				'label' => esc_html__('Table Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table,{{WRAPPER}} .oltew-order-list-table table th, {{WRAPPER}} .oltew-order-list-table table td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -861,7 +861,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_heading_style',
 			[
-				'label' => esc_html__('Table Header Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Header Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -870,7 +870,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_heading_title_color',
 			[
-				'label' => esc_html__('Title Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Title Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => [
@@ -882,7 +882,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_heading_icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Icon Size', 'order-list-table-elementor-widget' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -911,7 +911,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_heading_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table th .order_list_icon, {{WRAPPER}} .oltew-order-list-table th .order_list_icon svg' => 'color: {{VALUE}}',
@@ -923,7 +923,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_heading_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ffd000',
 				'selectors' => [
@@ -936,7 +936,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'table_heading_typography',
-				'label' => esc_html__('Typography', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Typography', 'order-list-table-elementor-widget'),
 				'selector' => '{{WRAPPER}} .oltew-order-list-table th',
 			]
 		);
@@ -958,7 +958,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_body_style',
 			[
-				'label' => esc_html__('Table Body Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table Body Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -966,7 +966,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_body_text_color',
 			[
-				'label' => esc_html__('Text color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Text color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => [
@@ -979,7 +979,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_body_icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Icon Size', 'order-list-table-elementor-widget' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -1008,7 +1008,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_body_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table td .order_list_icon, {{WRAPPER}} .oltew-order-list-table table td .order_list_icon svg' => 'color: {{VALUE}}',
@@ -1019,7 +1019,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1032,7 +1032,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'table_body_typography',
-				'label' => esc_html__('Typography', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Typography', 'order-list-table-elementor-widget'),
 				'selector' => '{{WRAPPER}} .oltew-order-list-table table td',
 			]
 		);
@@ -1040,7 +1040,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'tr_nth_child_even',
 			[
-				'label' => esc_html__('<tr> Background (even)', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('<tr> Background (even)', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table tr:nth-child(even)' => 'background-color: {{VALUE}}',
@@ -1051,7 +1051,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'tr_nth_child_odd',
 			[
-				'label' => esc_html__('<tr> Background (odd)', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('<tr> Background (odd)', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table tr:nth-child(odd)' => 'background-color: {{VALUE}}',
@@ -1064,7 +1064,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_tr_border',
 			[	
-				'label' => esc_html__('Table tr style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table tr style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1083,7 +1083,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_td_border',
 			[	
-				'label' => esc_html__('Table td style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Table td style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1106,7 +1106,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'product_link_style_section',
 			[
-				'label' => esc_html__('Product List Link', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product List Link', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1116,7 +1116,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_link_style_heading',
 			[
-				'label' => esc_html__('Product Link Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product Link Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1130,7 +1130,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_tab(
 			'product_links_tyle_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Normal', 'order-list-table-elementor-widget' ),
 			]
 		);
 
@@ -1139,7 +1139,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_body_link_color',
 			[
-				'label' => esc_html__('Product link color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product link color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table .product_list a' => 'color: {{VALUE}}'
@@ -1152,7 +1152,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'product_link_typography',
-				'label' => esc_html__('Product Link Typography', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product Link Typography', 'order-list-table-elementor-widget'),
 				'selector' => '{{WRAPPER}} .oltew-order-list-table table .product_list',
 			]
 		);
@@ -1166,7 +1166,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_tab(
 			'product_link_style_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Hover', 'order-list-table-elementor-widget' ),
 			]
 		);
 
@@ -1174,7 +1174,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'product_body_link_hover',
 			[
-				'label' => esc_html__('Product link color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Product link color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table .product_list a:hover' => 'color: {{VALUE}}'
@@ -1202,7 +1202,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'buy_now_button_style',
 			[
-				'label' => esc_html__('Buy Now Button', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Buy Now Button', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1217,7 +1217,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_tab(
 			'buy_now_style_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Normal', 'order-list-table-elementor-widget' ),
 			]
 		);
 
@@ -1226,7 +1226,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_link_color',
 			[
-				'label' => esc_html__('Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table .buy_now a' => 'color: {{VALUE}}',
@@ -1238,7 +1238,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_link_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table .buy_now_icon, {{WRAPPER}} .oltew-order-list-table table .buy_now_icon svg' => 'color: {{VALUE}}',
@@ -1262,7 +1262,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'buy_now_link_typography',
-				'label' => esc_html__('Typography', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Typography', 'order-list-table-elementor-widget'),
 				'selector' => '{{WRAPPER}} .oltew-order-list-table table .buy_now',
 			]
 		);
@@ -1271,7 +1271,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'buy_now_padding',
 			[
-				'label' => esc_html__('Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -1292,7 +1292,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'buy_now_margin',
 			[
-				'label' => esc_html__('Margin', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Margin', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -1318,7 +1318,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'buy_now_border_radius',
 			[
-				'label' => esc_html__('Border radius', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Border radius', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -1345,7 +1345,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_tab(
 			'buy_now_link_style_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Hover', 'order-list-table-elementor-widget' ),
 			]
 		);
 
@@ -1353,7 +1353,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'buy_now_link_hover',
 			[
-				'label' => esc_html__('Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .oltew-order-list-table table .buy_now a:hover' => 'color: {{VALUE}}'
@@ -1390,7 +1390,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'order_status_style',
 			[
-				'label' => esc_html__('Order Status Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Order Status Style', 'order-list-table-elementor-widget'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1400,7 +1400,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'oltew-order-list-table-ele' ),
+				'label' => esc_html__( 'Icon Size', 'order-list-table-elementor-widget' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -1429,7 +1429,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_completed_style',
 			[
-				'label' => esc_html__('Status Completed Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Completed Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1437,7 +1437,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_list_title_color',
 			[
-				'label' => esc_html__('Title Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Title Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_completed' => 'color: {{VALUE}}'
@@ -1448,7 +1448,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'complete_status_list_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1461,7 +1461,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'complete_status_list_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_completed' => 'background: {{VALUE}}'
@@ -1472,7 +1472,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'completed_padding',
 			[
-				'label' => esc_html__('Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .st_completed' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1486,7 +1486,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_processing_style',
 			[
-				'label' => esc_html__('Status Processing Style', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Processing Style', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1494,7 +1494,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'processing_status_list_title_color',
 			[
-				'label' => esc_html__('Title Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Title Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_processing' => 'color: {{VALUE}}'
@@ -1505,7 +1505,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'processing_status_list_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1518,7 +1518,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'processing_status_list_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_processing' => 'background: {{VALUE}}'
@@ -1528,7 +1528,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'processing_padding',
 			[
-				'label' => esc_html__('Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .st_processing' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1543,7 +1543,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_on_hold_style',
 			[
-				'label' => esc_html__('Status On Hold', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status On Hold', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1551,7 +1551,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'on_hold_status_list_title_color',
 			[
-				'label' => esc_html__('Title Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Title Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_on-hold' => 'color: {{VALUE}}'
@@ -1562,7 +1562,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'on_hold_status_list_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1575,7 +1575,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'on_hold_status_list_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_on-hold' => 'background: {{VALUE}}'
@@ -1585,7 +1585,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'on_hold_padding',
 			[
-				'label' => esc_html__('Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .st_on-hold' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1599,7 +1599,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'table_status_failed_style',
 			[
-				'label' => esc_html__('Status Failed & Cancelled', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Status Failed & Cancelled', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1607,7 +1607,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'failed_status_list_title_color',
 			[
-				'label' => esc_html__('Title Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Title Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_cancelled' => 'color: {{VALUE}}'
@@ -1618,7 +1618,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'failed_status_list_icon_color',
 			[
-				'label' => esc_html__('Icon Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Icon Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1631,7 +1631,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_control(
 			'failed_status_list_background_color',
 			[
-				'label' => esc_html__('Background Color', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Background Color', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .st_cancelled' => 'background: {{VALUE}}'
@@ -1641,7 +1641,7 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$this->add_responsive_control(
 			'failed_padding',
 			[
-				'label' => esc_html__('Padding', 'oltew-order-list-table-ele'),
+				'label' => esc_html__('Padding', 'order-list-table-elementor-widget'),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .st_cancelled' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1893,23 +1893,26 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 									<?php }; ?>
 
 									<!-- Sell Time -->
-									<?php if ($hide_sell_time !== 'yes') { ?>
-										<td class="sell_time"  data-column="<?php echo esc_html($sell_time); ?>">
+									<?php if ( $hide_sell_time !== 'yes' ) { ?>
+										<td class="sell_time" data-column="<?php echo esc_html( $sell_time ); ?>">
 											<div class="body_content">
-												<div class="order_list_icon"><?php \Elementor\Icons_Manager::render_icon($sell_list_time_icon, ['aria-hidden' => 'true']); ?></div>
+												<div class="order_list_icon">
+													<?php \Elementor\Icons_Manager::render_icon( $sell_list_time_icon, [ 'aria-hidden' => 'true' ] ); ?>
+												</div>
 												<?php
-												if ($order_time_format == 'ago') {
-													if (function_exists('oltew_ago_woo_list_table')) {
-														echo esc_html(oltew_ago_woo_list_table($order_date));
+												if ( $order_time_format === 'ago' ) {
+													if ( function_exists( 'oltew_ago_woo_list_table' ) ) {
+														echo esc_html( oltew_ago_woo_list_table( $order_date ) );
 													}
 												}
-												if ($order_time_format == 'date') {
-													echo esc_html(date('d/M/y h:i A', strtotime($order_date)));
+												if ( $order_time_format === 'date' ) {
+													echo esc_html( date_i18n( 'd/M/y h:i A', strtotime( $order_date ) ) );
 												}
 												?>
 											</div>
 										</td>
-									<?php }; ?>
+									<?php } ?>
+
 
 									<!-- Order Status -->
 									<?php if ($hide_status !== 'yes') { ?>
@@ -1954,26 +1957,18 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 												<?php endif; ?>
 
 												<?php
-												$word_limit = $product_link_words; // Limit product titles to 5 words
-												$product_links = []; // Initialize array to hold product titles with links
-
-												foreach ($order->get_items() as $item) {
-													// Get the product ID
+												$word_limit = $product_link_words;
+												$product_links = [];
+												
+												foreach ( $order->get_items() as $item ) {
 													$product_id = $item->get_product_id();
-
-													// Get the product permalink
-													$product_url = get_permalink($product_id);
-
-													// Get the product title
-													$full_title = esc_html($item->get_name());
-													$truncated_title = implode(' ', array_slice(explode(' ', $full_title), 0, $word_limit));
-
-													// Append the product link to the array
-													$product_links[] = '<a href="' . esc_url($product_url) . '">' . esc_html($truncated_title) . '...</a>';
+													$product_url = get_permalink( $product_id );
+													$full_title = esc_html( $item->get_name() );
+													$truncated_title = implode( ' ', array_slice( explode( ' ', $full_title ), 0, $word_limit ) );
+													$product_links[] = '<a href="' . esc_url( $product_url ) . '">' . esc_html( $truncated_title ) . '...</a>';
 												}
-
-												// Display product titles as links separated by commas
-												echo implode(', ', $product_links);
+												
+												echo wp_kses_post( implode( ', ', $product_links ) );												
 												?>
 											</div>
 										</td>
@@ -2001,18 +1996,17 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 									<?php }; ?>
 
 									<!-- Sell Amount -->
-									<?php if ($hide_sell_amount !== 'yes') { ?>
-										<td class="sell_amount"  data-column="<?php echo esc_html($sell_amount); ?>">
+									<?php if ( $hide_sell_amount !== 'yes' ) { ?>
+										<td class="sell_amount" data-column="<?php echo esc_html( $sell_amount ); ?>">
 											<?php
-											// Get the order's total and currency
 											$order_total = $order->get_total();
-											$order_currency = $order->get_currency(); // Get currency for this order
+											$order_currency = $order->get_currency();
 
-											// Format the price using the order's currency
-											echo wc_price($order_total, array('currency' => $order_currency));
+											echo wp_kses_post( wc_price( $order_total, array( 'currency' => $order_currency ) ) );
 											?>
 										</td>
-									<?php }; ?>
+									<?php } ?>
+
 
 
 									<!-- Buy Now -->

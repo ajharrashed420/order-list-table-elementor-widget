@@ -1,5 +1,7 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 //Convert PHP Date to Ago time format like facebook
 if (get_option( 'timezone_string' )) {
 	$timezone_gmt = get_option( 'timezone_string' );

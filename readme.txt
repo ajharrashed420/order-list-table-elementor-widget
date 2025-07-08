@@ -1,17 +1,17 @@
-=== WooCommerce Order List Table for Elementor ===
+=== Order List Table Elementor Widget for Woocommerce ===
 Contributors: wpmethods, ajharrashed
-Tags: woocommerce order list, woocommerce order table, elementor widget, order list table
+Tags: order list table, order table for woocommerce, elementor widget, order list table, woocommerce order list
 Requires at least: 5.9
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.0.1
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-To show Woocommerce recent order list on a table, just use this Elementor Widget/Addon.
+Order List Table use for to show Woocommerce recent order list on a table, just use this Elementor Widget/Addon. 
 
 == Description ==
-WooCommerce Order List Table is the best Elementor Addon to show your woocommerce customer orders on frontend using Elementor page builder. You can easily customize the order table And show your customer's information. Like order time, customer name, order status, etc. Just use elementor page builder and use This widget and customize this table.
+Order List Table is the best Elementor Addon to show your woocommerce customer orders on frontend using Elementor page builder. You can easily customize the order table And show your customer's information. Like order time, customer name, order status, etc. Just use elementor page builder and use This widget and customize this table.
 
 If you face 'time ago' issue just go to wp-admin dashboard settings>general>timezone and select city name from timezone.
 
