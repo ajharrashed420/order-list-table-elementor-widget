@@ -3,7 +3,7 @@
  * Plugin Name: Order List Table Elementor Widget for Woocommerce
  * Description: Order List Table use for to show Woocommerce recent order list on a table, just use this Elementor Widget/Addon. 
  * Plugin URI:  https://wpmethods.com/order-list-table-elementor-widget
- * Version:     3.0.0
+ * Version:     3.0.1
  * Author:      WP Methods
  * Author URI:  https://wpmethods.com/
  * Text Domain: order-list-table-elementor-widget

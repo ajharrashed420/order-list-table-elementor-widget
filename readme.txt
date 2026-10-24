@@ -4,7 +4,7 @@ Tags: order list table, order table for woocommerce, elementor widget, order lis
 Requires at least: 5.9
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,10 @@ No, You must install and active woocommerce plugin to make this plugin work.
 6. Responsive for mobile device
 
 == Changelog ==
+= 3.0.1 (2026-01-13) =
+- Fixed Order Status Refunded Issue
+- Fixed some minor issues
+
 = 2.0.0 (2025-01-02) =
 - Fixed not showing order list some website.
 - Added Buy Now button on the order list.

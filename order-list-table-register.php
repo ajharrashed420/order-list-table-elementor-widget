@@ -469,6 +469,20 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 				],
 			]
 		);
+
+
+		//Status Refunded Icon
+		$this->add_control(
+			'set_status_refunded_icon',
+			[
+				'label' => esc_html__('Status Refunded Icon', 'order-list-table-elementor-widget'),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fa fa-undo',
+					'library' => 'solid',
+				],
+			]
+		);
 		
 		
 		
@@ -1711,6 +1725,8 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 		$set_status_processing_icon = $settings['set_status_processing_icon'];
 		$set_status_onhold_icon = $settings['set_status_onhold_icon'];
 		$set_status_faild_icon = $settings['set_status_faild_icon'];
+		$set_status_refunded_icon = $settings['set_status_refunded_icon'];
+
 
 		
 		// Hide Column
@@ -1870,27 +1886,52 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 						<tbody>
 							<?php
 							$sl = 1;
+
 							foreach ($customer_orders as $customer_order) {
+
+								// Get order object
 								$order = $is_hpos_enabled ? $customer_order : wc_get_order($customer_order->ID);
-								if (!$order) continue;
+								if ( ! $order ) continue;
+
+								// 🔥 IMPORTANT: Handle refunded orders
+								if ( $order instanceof WC_Order_Refund ) {
+									$order = wc_get_order( $order->get_parent_id() );
+									if ( ! $order ) continue;
+								}
+
 								$order_date = $order->get_date_created();
+
+								// Customer name fallback
+								$first_name = $order->get_billing_first_name();
+								$last_name  = $order->get_billing_last_name();
+								$customer_name_display = trim($first_name . ' ' . $last_name);
+								if ( empty($customer_name_display) ) {
+									$customer_name_display = 'Guest';
+								}
 							?>
-								<tr style="text-align:<?php echo esc_html($oltew_table_td_alignment); ?>;">
-									
+								<tr style="text-align:<?php echo esc_attr($oltew_table_td_alignment); ?>;">
+
 									<!-- Serial Number -->
 									<?php if ($hide_order_sl !== 'yes') { ?>
-										<td class="order_sl" data-column="SL"><?php echo esc_html($sl++); ?></td>
-									<?php }; ?>
-									
+										<td class="order_sl" data-column="SL">
+											<?php echo esc_html($sl++); ?>
+										</td>
+									<?php } ?>
+
 									<!-- Customer Name -->
 									<?php if ($hide_customer_title !== 'yes') { ?>
-										<td class="customer_name"  data-column="<?php echo esc_html($customer_name); ?>">
+										<td class="customer_name" data-column="<?php echo esc_attr($customer_name); ?>">
 											<div class="body_content">
-												<div class="order_list_icon"><?php \Elementor\Icons_Manager::render_icon($customer_list_icon, ['aria-hidden' => 'true']); ?></div>
-												<?php echo esc_html($order->get_billing_first_name() . ' ' . $order->get_billing_last_name() ?: 'Guest'); ?>
+												<div class="order_list_icon">
+													<?php \Elementor\Icons_Manager::render_icon(
+														$customer_list_icon,
+														['aria-hidden' => 'true']
+													); ?>
+												</div>
+												<?php echo esc_html($customer_name_display); ?>
 											</div>
 										</td>
-									<?php }; ?>
+									<?php } ?>
 
 									<!-- Sell Time -->
 									<?php if ( $hide_sell_time !== 'yes' ) { ?>
@@ -1939,6 +1980,13 @@ class Oltew_Order_List_table_Ele_Widget extends \Elementor\Widget_Base
 											if ($order_status == 'Failed') { ?>
 												<span class="st_cancelled status_odd"><span class="status_icon"><?php \Elementor\Icons_Manager::render_icon($set_status_faild_icon, ['aria-hidden' => 'true'])?></span> Failed</span>
 											<?php }
+
+											//Refunded Status
+											if ( $order->get_total_refunded() > 0 && $order_status !== 'refunded' ) { ?>
+												<span class="st_cancelled status_odd"><span class="status_icon"><?php \Elementor\Icons_Manager::render_icon($set_status_refunded_icon, ['aria-hidden' => 'true'])?></span> Refunded</span>
+											<?php }
+
+
 										?>
 									</td>
 									
