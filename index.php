@@ -1,5 +1,10 @@
 <?php
-// Silence is golden.
+/**
+ * Silence is golden.
+ *
+ * @package OrderListTableElementorWidget
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+	exit;
 }
