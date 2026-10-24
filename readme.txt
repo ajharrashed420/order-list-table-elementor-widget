@@ -85,7 +85,7 @@ Yes. The original widget identifier and supported saved settings are retained.
 
 == Changelog ==
 
-= 3.1.0 (2026-10-24) =
+= 3.1.0 (2026-10-25) =
 * Added Modern and Compact order layouts plus a Product List Table in one Elementor category.
 * Added draggable columns, responsive mobile layouts and extensive Elementor design controls.
 * Added product/category selection, featured and ranked collections, and simple/variable product purchase links.
