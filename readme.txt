@@ -4,14 +4,25 @@ Tags: order table, elementor widget, woocommerce orders, order list
 Requires at least: 5.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Requires Plugins: elementor, woocommerce
-Stable tag: 3.1.0
+Requires Plugins: woocommerce
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Display WooCommerce orders and products in modern, customizable Elementor tables with mobile layouts, product filters and Load More.
 
 == Description ==
+
+= Settings and WooCommerce My Account =
+
+Open **Order List Table** in the WordPress admin menu to manage the plugin. Each Elementor widget has its own toggle and is enabled by default. Disabled widgets stop rendering, including previously saved instances. Re-enable them to restore their saved tables.
+
+Enable the optional **My Account order tables** integration to replace WooCommerce?s Orders tab, display before or after Dashboard content, or select any combination of the three placements. Customers see only their own orders, including statuses, totals, purchased products, and WooCommerce?s View, Pay and Cancel actions when available. Signed Load More requests preserve customer ownership.
+
+Choose Modern or Compact layout, visible columns, status filters, batch size, mobile cards, expandable products, text, colors and site-date or relative-time formatting. Leave every status unchecked to include all registered statuses. Account appearance settings apply to My Account; Elementor widgets retain their own design controls.
+
+My Account works with WooCommerce alone. Install Elementor only if you want to use the Elementor widgets. Account integration is disabled by default. Exclude private account pages from server/CDN full-page caching.
+
 
 🚀 **Beautiful Order & Product Tables — Built Inside Elementor**
 
@@ -104,7 +115,7 @@ Only published, publicly viewable products are linked. Catalog tables respect Wo
 
 == Installation ==
 
-1. Install and activate **Elementor** and **WooCommerce**.
+1. Install and activate **WooCommerce**. Install **Elementor** if you want to use the widgets.
 2. Upload the plugin ZIP through **Plugins > Add New**, or upload its folder to **wp-content/plugins**.
 3. Activate **Order List Table Elementor Widget for WooCommerce**.
 4. Edit a page in Elementor and open the **Order List Table** widget category.
@@ -123,7 +134,7 @@ Only published, publicly viewable products are linked. Catalog tables respect Wo
 
 = 🧩 Which plugins are required? =
 
-**Elementor** and **WooCommerce** must be installed and active.
+**WooCommerce** is required. **Elementor** is required only for the Elementor widgets; My Account order tables work without Elementor.
 
 = ↕️ Can I reorder or hide columns? =
 
@@ -154,6 +165,14 @@ Yes. Disable the individual effects in Elementor. Visitor reduced-motion prefere
 Yes. The original widget identifier and supported saved settings are retained.
 
 == Changelog ==
+
+= 3.2.0 (2026-10-28) =
+* Added a dedicated Settings API screen with individual Elementor widget toggles, enabled by default.
+* Added optional customer-owned My Account tables in the Orders tab and before/after the Dashboard.
+* Added account layout, columns, status filters, colors, mobile cards, date formatting and signed Load More.
+* Shared order queries and renderers across integrations; separated Elementor controls, templates and assets.
+* Centralized timezone-aware date helpers, guarded dependency loading and revoked disabled table cursors.
+
 
 = 3.1.0 (2026-10-25) =
 * Added Modern and Compact order layouts plus a Product List Table in one Elementor category.

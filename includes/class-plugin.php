@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Load widgets only when dependencies are available. */
 final class Plugin {
-	const VERSION                   = '3.1.0';
+	const VERSION                   = '3.2.4';
 	const MINIMUM_ELEMENTOR_VERSION = '3.7.0';
 	const MINIMUM_PHP_VERSION       = '7.4';
 
@@ -38,6 +38,18 @@ final class Plugin {
 
 	/** Initialize the integration. */
 	public function __construct() {
+		require_once __DIR__ . '/class-oltew-settings.php';
+		new \Oltew_Settings();
+		if ( class_exists( 'WooCommerce' ) ) {
+			require_once __DIR__ . '/class-oltew-order-query.php';
+			require_once __DIR__ . '/trait-oltew-table-pagination.php';
+			require_once __DIR__ . '/trait-oltew-order-table-renderer.php';
+			require_once __DIR__ . '/class-oltew-load-more.php';
+			require_once __DIR__ . '/class-oltew-account-table.php';
+			require_once __DIR__ . '/class-oltew-my-account.php';
+			new \Oltew_Load_More();
+			new \Oltew_My_Account();
+		}
 		if ( $this->is_compatible() ) {
 			add_action( 'elementor/init', array( $this, 'init' ) );
 		}
@@ -58,8 +70,6 @@ final class Plugin {
 
 	/** Register the Elementor hooks. */
 	public function init() {
-		require_once __DIR__ . '/class-oltew-load-more.php';
-		new \Oltew_Load_More();
 		require_once __DIR__ . '/class-oltew-catalog-search.php';
 		new \Oltew_Catalog_Search();
 		add_action( 'elementor/controls/register', array( $this, 'register_catalog_control' ) );
@@ -99,14 +109,22 @@ final class Plugin {
 	 */
 	public function register_widgets( $widgets_manager ) {
 		require_once __DIR__ . '/trait-oltew-table-pagination.php';
+		require_once __DIR__ . '/trait-oltew-pagination-controls.php';
 		require_once __DIR__ . '/trait-oltew-table-design.php';
 		require_once __DIR__ . '/trait-oltew-modern-widget.php';
 		require_once __DIR__ . '/class-oltew-order-list-table-ele-widget.php';
 		require_once __DIR__ . '/class-oltew-compact-table-widget.php';
 		require_once __DIR__ . '/class-oltew-product-list-table-widget.php';
-		$widgets_manager->register( new \Oltew_Order_List_Table_Ele_Widget() );
-		$widgets_manager->register( new \Oltew_Compact_Table_Widget() );
-		$widgets_manager->register( new \Oltew_Product_List_Table_Widget() );
+		$widgets = array(
+			'woo_recent_orders_table'    => '\\Oltew_Order_List_Table_Ele_Widget',
+			'oltew_compact_orders_table' => '\\Oltew_Compact_Table_Widget',
+			'oltew_product_list_table'   => '\\Oltew_Product_List_Table_Widget',
+		);
+		foreach ( $widgets as $name => $class ) {
+			if ( \Oltew_Settings::widget_enabled( $name ) ) {
+				$widgets_manager->register( new $class() );
+			}
+		}
 	}
 
 	/** Display an escaped notice describing minimum dependencies. */
@@ -119,7 +137,7 @@ final class Plugin {
 			esc_html(
 				sprintf(
 					/* translators: 1: Minimum Elementor version, 2: Minimum PHP version. */
-					__( 'Order List Table requires WooCommerce, Elementor %1$s or newer, and PHP %2$s or newer to be installed and active.', 'order-list-table-elementor-widget' ),
+					__( 'Order List Table: WooCommerce and PHP %2$s or newer are required. Elementor %1$s or newer is required only for the Elementor widgets. My Account tables work without Elementor.', 'order-list-table-elementor-widget' ),
 					self::MINIMUM_ELEMENTOR_VERSION,
 					self::MINIMUM_PHP_VERSION
 				)

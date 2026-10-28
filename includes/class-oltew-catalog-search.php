@@ -19,7 +19,7 @@ class Oltew_Catalog_Search {
 
 	/** Enqueue the selector view only in the Elementor editor. */
 	public function enqueue_editor() {
-		wp_enqueue_script( 'oltew-catalog-editor', plugins_url( '../js/catalog-editor.js', __FILE__ ), array( 'jquery', 'elementor-editor' ), '3.1.0', true );
+		wp_enqueue_script( 'oltew-catalog-editor', plugins_url( '../assets/js/catalog-editor.js', __FILE__ ), array( 'jquery', 'elementor-editor' ), OLTEW_VERSION, true );
 		wp_localize_script(
 			'oltew-catalog-editor',
 			'oltewCatalog',

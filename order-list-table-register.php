@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 require_once __DIR__ . '/includes/class-oltew-load-more.php';
 require_once __DIR__ . '/includes/trait-oltew-table-pagination.php';
+require_once __DIR__ . '/includes/trait-oltew-pagination-controls.php';
+require_once __DIR__ . '/includes/trait-oltew-order-table-renderer.php';
 require_once __DIR__ . '/includes/trait-oltew-table-design.php';
 require_once __DIR__ . '/includes/trait-oltew-modern-widget.php';
 require_once __DIR__ . '/includes/class-oltew-order-list-table-ele-widget.php';

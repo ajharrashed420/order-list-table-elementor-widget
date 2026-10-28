@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** Keep the table design controls consistent across widgets. */
 trait Oltew_Table_Design {
 	use Oltew_Table_Pagination;
+	use Oltew_Pagination_Controls;
 
 	/**
 	 * Register common design controls.

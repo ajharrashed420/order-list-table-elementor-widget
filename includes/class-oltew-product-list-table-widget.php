@@ -686,6 +686,9 @@ class Oltew_Product_List_Table_Widget extends \Elementor\Widget_Base {
 
 	/** Render only published, visible WooCommerce catalog products. */
 	protected function render() {
+		if ( ! Oltew_Settings::widget_enabled( $this->get_name() ) ) {
+			return;
+		}
 		if ( ! function_exists( 'wc_get_products' ) ) {
 			return;
 		}

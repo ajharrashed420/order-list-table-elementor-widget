@@ -20,9 +20,9 @@ class Oltew_Load_More {
 	/**
 	 * Sign the next page's configuration; no client-supplied settings are trusted.
 	 *
-	 * @param \Elementor\Widget_Base $widget Table widget.
-	 * @param array                  $settings Rendered settings.
-	 * @param array                  $state Next-page cursor.
+	 * @param object $widget Table widget or account adapter.
+	 * @param array  $settings Rendered settings.
+	 * @param array  $state Next-page cursor.
 	 * @return string
 	 */
 	public static function token( $widget, $settings, $state ) {
@@ -55,11 +55,23 @@ class Oltew_Load_More {
 			return new WP_Error( 'invalid_cursor', __( 'Invalid pagination request.', 'order-list-table-elementor-widget' ) );
 		}
 		$data = json_decode( hex2bin( $parts[0] ), true );
-		if ( ! is_array( $data ) || ! is_array( $data['settings'] ?? null ) || ! is_array( $data['state'] ?? null ) || ! is_string( $data['id'] ?? null ) || ! preg_match( '/^[a-zA-Z0-9_-]{1,80}$/', $data['id'] ) || ! in_array( $data['widget'] ?? '', array( 'woo_recent_orders_table', 'oltew_compact_orders_table', 'oltew_product_list_table' ), true ) ) {
+		if ( ! is_array( $data ) || ! is_array( $data['settings'] ?? null ) || ! is_array( $data['state'] ?? null ) || ! is_string( $data['id'] ?? null ) || ! preg_match( '/^[a-zA-Z0-9_-]{1,80}$/', $data['id'] ) || ! in_array( $data['widget'] ?? '', array( 'woo_recent_orders_table', 'oltew_compact_orders_table', 'oltew_product_list_table', 'oltew_account_orders' ), true ) ) {
 			return new WP_Error( 'invalid_cursor', __( 'Invalid pagination request.', 'order-list-table-elementor-widget' ) );
 		}
 		if ( (int) ( $data['expires'] ?? 0 ) < time() ) {
 			return new WP_Error( 'expired_cursor', __( 'Please reload this page before loading more rows.', 'order-list-table-elementor-widget' ) );
+		}
+		if ( 'oltew_account_orders' === $data['widget'] ) {
+			$options = Oltew_Settings::get();
+			if ( 'yes' !== $options['account_enabled'] || 'own' !== ( $data['settings']['oltew_scope'] ?? '' ) ) {
+				return new WP_Error( 'disabled_table', __( 'This account table is unavailable.', 'order-list-table-elementor-widget' ) );
+			}
+			$table = new Oltew_Account_Table();
+			if ( $data['settings'] !== $table->get_settings_for_display() ) {
+				return new WP_Error( 'changed_settings', __( 'Table settings have changed. Please reload this page.', 'order-list-table-elementor-widget' ) );
+			}
+		} elseif ( ! Oltew_Settings::widget_enabled( $data['widget'] ) ) {
+			return new WP_Error( 'disabled_table', __( 'This widget has been disabled.', 'order-list-table-elementor-widget' ) );
 		}
 		$scope = 'oltew_product_list_table' === $data['widget'] ? 'public' : ( $data['settings']['oltew_scope'] ?? 'public' );
 		if ( ! in_array( $scope, array( 'public', 'own', 'managers' ), true ) || ( 'public' !== $scope && ( ! is_user_logged_in() || get_current_user_id() !== (int) ( $data['user'] ?? 0 ) ) ) || ( 'managers' === $scope && ! current_user_can( 'manage_woocommerce' ) ) ) {
@@ -76,14 +88,21 @@ class Oltew_Load_More {
 		if ( is_wp_error( $data ) ) {
 			wp_send_json_error( array( 'message' => $data->get_error_message() ), 403 );
 		}
-		$widget = \Elementor\Plugin::instance()->elements_manager->create_element_instance(
-			array(
-				'id'         => $data['id'],
-				'elType'     => 'widget',
-				'widgetType' => $data['widget'],
-				'settings'   => $data['settings'],
-			)
-		);
+		if ( 'oltew_account_orders' === $data['widget'] ) {
+			$widget           = new Oltew_Account_Table( $data['id'] );
+			$data['settings'] = $widget->get_settings_for_display();
+		} elseif ( class_exists( '\Elementor\Plugin' ) ) {
+			$widget = \Elementor\Plugin::instance()->elements_manager->create_element_instance(
+				array(
+					'id'         => $data['id'],
+					'elType'     => 'widget',
+					'widgetType' => $data['widget'],
+					'settings'   => $data['settings'],
+				)
+			);
+		} else {
+			$widget = null;
+		}
 		if ( ! $widget || ! method_exists( $widget, 'oltew_render_next' ) || 'yes' !== ( $data['settings']['oltew_load_more'] ?? 'yes' ) ) {
 			wp_send_json_error( array( 'message' => __( 'This table cannot load more rows.', 'order-list-table-elementor-widget' ) ), 400 );
 		}

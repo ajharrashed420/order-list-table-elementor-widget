@@ -3,7 +3,7 @@
  * Plugin Name: Order List Table Elementor Widget for WooCommerce
  * Description: Display WooCommerce orders and products with customizable, responsive table widgets for Elementor.
  * Plugin URI:  https://wpmethods.com/order-list-table-elementor-widget
- * Version:     3.1.0
+ * Version:     3.2.0
  * Author:      WP Methods
  * Author URI:  https://wpmethods.com/
  * Text Domain: order-list-table-elementor-widget
@@ -11,9 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Requires PHP: 7.4
  * Requires at least: 5.9
- * Requires Plugins: elementor, woocommerce
- * Elementor tested up to: 4.2.4
- * Elementor Pro tested up to: 3.30.0
+ * Requires Plugins: woocommerce
  *
  * @package OrderListTableElementorWidget
  */
@@ -21,13 +19,16 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-define( 'OLTEW_VERSION', '1.0.0' );
+define( 'OLTEW_VERSION', '3.2.0' );
+define( 'OLTEW_FILE', __FILE__ );
+define( 'OLTEW_PATH', plugin_dir_path( __FILE__ ) );
+define( 'OLTEW_URL', plugin_dir_url( __FILE__ ) );
 
 /** Register assets; Elementor loads them only when a widget needs them. */
 function oltew_order_list_table_enq_style() {
-	wp_register_style( 'order-list-table', plugins_url( 'css/custom-style.css', __FILE__ ), array(), OLTEW_VERSION );
-	wp_register_script( 'oltew-order-list', plugins_url( 'js/order-list.js', __FILE__ ), array(), OLTEW_VERSION, true );
-	wp_register_script( 'oltew-table-pagination', plugins_url( 'js/load-more.js', __FILE__ ), array(), OLTEW_VERSION, true );
+	wp_register_style( 'order-list-table', plugins_url( 'assets/css/custom-style.css', __FILE__ ), array(), OLTEW_VERSION );
+	wp_register_script( 'oltew-order-list', plugins_url( 'assets/js/order-list.js', __FILE__ ), array(), OLTEW_VERSION, true );
+	wp_register_script( 'oltew-table-pagination', plugins_url( 'assets/js/load-more.js', __FILE__ ), array(), OLTEW_VERSION, true );
 }
 add_action( 'init', 'oltew_order_list_table_enq_style' );
 

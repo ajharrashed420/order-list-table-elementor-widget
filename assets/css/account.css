@@ -1,0 +1,65 @@
+.oltew-account { margin-block: 24px; min-width: 0; }
+.oltew-account .oltew-orders { color: var(--oltew-text, #334155); }
+.oltew-account .oltew-orders .oltew-title, .oltew-account .oltew-table th { color: var(--oltew-heading, #0f172a); }
+.oltew-account .oltew-orders .st_completed { color: var(--oltew-completed, #047857); }
+.oltew-account .oltew-orders .st_processing { color: var(--oltew-processing, #1d4ed8); }
+.oltew-account .oltew-orders .st_pending, .oltew-account .oltew-orders .st_on-hold { color: var(--oltew-pending, #92400e); }
+.oltew-account .oltew-orders .st_cancelled { color: var(--oltew-failed, #b91c1c); }
+.oltew-account .oltew-orders .st_refunded { color: var(--oltew-refunded, #6d28d9); }
+.oltew-account .oltew-orders .body_content { flex-wrap: wrap; }
+.oltew-account .oltew-orders .order_number { white-space: nowrap; font-weight: 600; }
+.oltew-account .oltew-orders .oltew-count { margin-inline-start: auto; }
+
+/* Scoped selectors keep theme button styles from overriding account settings. */
+.oltew-account .oltew-orders .oltew-table a.oltew-account-action,
+.oltew-account .oltew-orders button.oltew-load-more {
+    border-color: var(--oltew-accent);
+    background: var(--oltew-accent);
+    color: #fff;
+}
+.oltew-account .oltew-orders .oltew-table a.oltew-account-action:is(:hover, :focus, :active),
+.oltew-account .oltew-orders button.oltew-load-more:is(:hover, :focus, :active) {
+    border-color: var(--oltew-accent);
+    background: var(--oltew-accent);
+    color: #fff;
+    text-decoration: none;
+}
+.oltew-account .oltew-orders .oltew-table button.oltew-products-toggle {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 3px 0;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--oltew-accent);
+    box-shadow: none;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: start;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.oltew-account .oltew-orders .oltew-table button.oltew-products-toggle:is(:hover, :focus, :active) {
+    border: 0;
+    background: transparent;
+    color: var(--oltew-accent);
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transform: none;
+}
+.oltew-account .oltew-orders .oltew-table :is(a.oltew-account-action, button.oltew-products-toggle):focus-visible {
+    outline: 2px solid var(--oltew-accent);
+    outline-offset: 3px;
+}
